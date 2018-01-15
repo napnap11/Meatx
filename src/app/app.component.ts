@@ -4,9 +4,9 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
-import { MainPage } from '../pages/main/main';
-
+import { PicturePage } from '../pages/picture/picture';
+import { ResultPage} from '../pages/result/result';
+declare function require(path: string): any;
 @Component({
   templateUrl: 'app.html'
 })
@@ -22,7 +22,9 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Home', component: HomePage }
+      { title: 'Home', component: HomePage },
+      { title: 'Picture', component: PicturePage },
+      { title: 'Result', component: ResultPage }
     ];
 
   }

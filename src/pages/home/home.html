@@ -8,5 +8,7 @@
 </ion-header>
 
 <ion-content padding>
-    <button ion-button (click)="takePicture()">Take a Picture</button>
+    <button ion-button (click)="takePicture()" [navPush]="picturePage">ถ่ายรูป</button>
+    <div></div>
+    <button ion-button (click)="openAlbum()" [navPush]="picturePage">เลือกจากรูปที่มีอยู่</button>
 </ion-content>

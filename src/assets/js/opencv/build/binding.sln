@@ -1,0 +1,34 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "action_after_build", "action_after_build.vcxproj", "{769DF0B1-C6FF-3A3A-41DD-54925ACCA29A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8AA8146B-981D-4015-8213-5548F9633DB1} = {8AA8146B-981D-4015-8213-5548F9633DB1}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "opencv", "opencv.vcxproj", "{8AA8146B-981D-4015-8213-5548F9633DB1}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "test_nativemat", "test_nativemat.vcxproj", "{38B41346-5ABA-E3EC-577C-E2CBBF53C7EF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{38B41346-5ABA-E3EC-577C-E2CBBF53C7EF}.Debug|x64.ActiveCfg = Debug|x64
+		{38B41346-5ABA-E3EC-577C-E2CBBF53C7EF}.Debug|x64.Build.0 = Debug|x64
+		{38B41346-5ABA-E3EC-577C-E2CBBF53C7EF}.Release|x64.ActiveCfg = Release|x64
+		{38B41346-5ABA-E3EC-577C-E2CBBF53C7EF}.Release|x64.Build.0 = Release|x64
+		{769DF0B1-C6FF-3A3A-41DD-54925ACCA29A}.Debug|x64.ActiveCfg = Debug|x64
+		{769DF0B1-C6FF-3A3A-41DD-54925ACCA29A}.Debug|x64.Build.0 = Debug|x64
+		{769DF0B1-C6FF-3A3A-41DD-54925ACCA29A}.Release|x64.ActiveCfg = Release|x64
+		{769DF0B1-C6FF-3A3A-41DD-54925ACCA29A}.Release|x64.Build.0 = Release|x64
+		{8AA8146B-981D-4015-8213-5548F9633DB1}.Debug|x64.ActiveCfg = Debug|x64
+		{8AA8146B-981D-4015-8213-5548F9633DB1}.Debug|x64.Build.0 = Debug|x64
+		{8AA8146B-981D-4015-8213-5548F9633DB1}.Release|x64.ActiveCfg = Release|x64
+		{8AA8146B-981D-4015-8213-5548F9633DB1}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import {Ionic2RatingModule} from 'ionic2-rating';
 /**
  * Generated class for the ResultPage page.
  *
@@ -14,8 +14,11 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'result.html',
 })
 export class ResultPage {
-
+  result: number;
+  base64Image: string;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.result = navParams.get('result');
+    this.base64Image = navParams.get('base64Image');
   }
 
   ionViewDidLoad() {
