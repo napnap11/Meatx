@@ -6,7 +6,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { HomePage } from '../pages/home/home';
 import { PicturePage } from '../pages/picture/picture';
 import { ResultPage} from '../pages/result/result';
-declare function require(path: string): any;
+import { GmailLoginPage} from '../pages/gmail-login/gmail-login';
 @Component({
   templateUrl: 'app.html'
 })
@@ -24,7 +24,8 @@ export class MyApp {
     this.pages = [
       { title: 'Home', component: HomePage },
       { title: 'Picture', component: PicturePage },
-      { title: 'Result', component: ResultPage }
+      { title: 'Result', component: ResultPage },
+      { title: 'GmailLogin', component: GmailLoginPage }
     ];
 
   }

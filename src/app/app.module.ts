@@ -10,13 +10,16 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import {Camera,CameraOptions} from '@ionic-native/camera';
 import { PicturePage } from '../pages/picture/picture';
 import { ResultPage } from '../pages/result/result';
+import { GmailLoginPage } from '../pages/gmail-login/gmail-login';
 import {Ionic2RatingModule} from 'ionic2-rating';
+import { GooglePlus } from '@ionic-native/google-plus';
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     PicturePage,
-    ResultPage
+    ResultPage,
+    GmailLoginPage
   ],
   imports: [
     BrowserModule,
@@ -28,12 +31,14 @@ import {Ionic2RatingModule} from 'ionic2-rating';
     MyApp,
     HomePage,
     PicturePage,
-    ResultPage
+    ResultPage,
+    GmailLoginPage
   ],
   providers: [
     Camera,
     StatusBar,
     SplashScreen,
+    GooglePlus,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
