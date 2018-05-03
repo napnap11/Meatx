@@ -6,28 +6,49 @@
 -->
 <ion-header>
 
-    <ion-navbar>
-        <button ion-button menuToggle>
-          <ion-icon name="menu"></ion-icon>
-        </button>
-        <ion-title>Result</ion-title>
-      </ion-navbar>
-    
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Result</ion-title>
+  </ion-navbar>
+
 </ion-header>
 
 
 <ion-content padding>
-    <img [src]="base64Image" >
-    <div></div>
-    <rating [(ngModel)]="rate" 
-        readOnly="false" 
-        max="5"
-        innerValue="5"
-        value="5"
-        emptyStarIconName="star-outline" 
-        halfStarIconName="star-half" 
-        starIconName="star" 
-        nullable="false" 
-        ></rating>
-
+  <ion-row style="max-height:50%">
+    <ion-col text-center>
+      <img [src]="base64Image" style="max-height:100%">
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col text-center id="rating-box">
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      พื้นที่ของเนื้อแดง : {{this.percentRed*100}} %
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      จำนวนไขมันขนาดเล็ก | กลาง | ใหญ่ : {{this.numS}} | {{this.numM}} | {{this.numL}}
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      ค่าเฉลี่ยระยะห่างของไขมันขนาดเล็ก | กลาง | ใหญ่ : {{this.avgS}} | {{this.avgM}} | {{this.avgL}}
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      ค่าเฉลี่ยระยะห่างของไขมันทุกขนาด : {{this.avgAll}}
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col text-center>
+      <button ion-button (click)="backHome()">กลับหน้าหลัก</button>
+    </ion-col>
+  </ion-row>
 </ion-content>

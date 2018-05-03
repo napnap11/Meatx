@@ -7,15 +7,36 @@
 <ion-header>
 
   <ion-navbar>
-  <button ion-button menuToggle>
-    <ion-icon name="menu"></ion-icon>
-  </button>
-  <ion-title>gmailLogin</ion-title>
-</ion-navbar>
+    <ion-title>MeatX</ion-title>
+  </ion-navbar>
 
 </ion-header>
-
-
 <ion-content padding>
-<div>{{this.log}}</div>
+  <ion-row>
+    <ion-col text-center>
+      <img src="assets/imgs/beefstar512.png" meax-height="512px" max-width="512px" width="80%" height="auto">
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col text-center>
+      <img src="assets/imgs/meatx2.png" mex-height="72px" max-width="242px" height="auto" width="auto">
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col text-center>
+      <ion-item>
+        <ion-label>เข้าใช้งานในฐานะ</ion-label>
+        <ion-select [(ngModel)]="userType">
+          <ion-option value="normal">ผู้ใช้งานทั่วไป</ion-option>
+          <ion-option value="en">ผู้ประกอบการ</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col text-center>
+      <button class="loginBtn loginBtn--google" (click)="login()">Signin with Google</button>
+    </ion-col>
+  </ion-row>
+
 </ion-content>

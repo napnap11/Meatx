@@ -1,0 +1,40 @@
+<!--
+  Generated template for the SyncResultPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+        <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>รายการภาพถ่าย</ion-title>
+      </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-row>
+    <ion-col style='width: 15%;' text-center>ภาพ</ion-col>
+    <ion-col *ngIf="en" style='width: 15%;' text-center>รหัส</ion-col>
+    <ion-col style='width: 10%;' text-center>เกรด</ion-col>
+    <ion-col *ngIf="en" style='width: 15%;' text-center>หมายเหตุ</ion-col>
+    <ion-col *ngIf="en" style='width: 17%;' text-center>สถานะ</ion-col>
+    <ion-col *ngIf="!en" style='width: 17%;' text-center>เวลา</ion-col>
+    <ion-col *ngIf="en" style='width: 10%;' text-center></ion-col>
+    <ion-col *ngIf="en" style='width: 10%;' text-center></ion-col>
+  </ion-row>
+  <ion-row *ngFor="let d of data"> 
+    <ion-col style='width: 15%;' text-center><img src='{{d.base64Image}}'></ion-col>
+    <ion-col *ngIf="en" style='width: 15%;' text-center>{{d.meatID}}</ion-col>
+    <ion-col style='width: 10%;' text-center>{{d.grade}}</ion-col>
+    <ion-col *ngIf="en" style='width: 15%;' text-center>{{d.note}}</ion-col>
+    <ion-col *ngIf="en" style='width: 15%;' text-center>{{d.status}}</ion-col>
+    <ion-col *ngIf="!en" style='width: 17%;' text-center>{{d.pictureTime}}</ion-col>
+    <button *ngIf="en" ion-button style='width: 12%;' text-center (click)="editPicture(d.index)" >แก้ไข</button>
+    <button *ngIf="en" ion-button style='width: 12%;' text-center (click)="deletePicture(d.index)" color="danger">ลบ</button>
+  </ion-row>
+</ion-content>

@@ -7,22 +7,62 @@
 <ion-header>
 
     <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Picture</ion-title>
-  </ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>MeatX</ion-title>
+    </ion-navbar>
 
 </ion-header>
-
-
 <ion-content padding>
-  <!-- Show image here -->
-  <img src="assets/imgs/1.jpg" id="image" >
-  <div></div>
-    <button ion-button (click)="takePicture()">ถ่ายรูปใหม่</button>
-    <div></div>
-    <button ion-button (click)="openAlbum()">เลือกรูปจากที่มีอยู่ใหม่</button>
-    <div></div>
-    <button ion-button (click)="process()">วิเคราะห์คุณภาพเนื้อวัว</button>
+    <!-- Show image here -->
+    <ion-row style="max-height:50%">
+        <ion-col text-center>
+            <img src={{this.base64Image}} id="image" style="max-height:100%">
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col text-center>
+            <button ion-button style="width: 60%" (click)="takePicture()">ถ่ายภาพใหม่</button>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col text-center>
+            <button *ngIf="en" ion-button style="width: 60%" (click)="openAlbum()">เลือกภาพจากที่มีอยู่ใหม่</button>
+        </ion-col>
+    </ion-row>
+    <ion-item *ngIf="en">
+        <ion-label color="primary">ระบุรหัสของชิ้นเนื้อ</ion-label>
+        <ion-input id="beefID" [(ngModel)]="beefID"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="en">
+        <ion-label color="primary">เลือกเกรด</ion-label>
+        <ion-select [(ngModel)]="grade">
+            <ion-option value="0.5">0.5</ion-option>
+            <ion-option value="1">1</ion-option>
+            <ion-option value="1.5">1.5</ion-option>
+            <ion-option value="2">2</ion-option>
+            <ion-option value="2.5">2.5</ion-option>
+            <ion-option value="3">3</ion-option>
+            <ion-option value="3.5">3.5</ion-option>
+            <ion-option value="4">4</ion-option>
+            <ion-option value="4.5">4.5</ion-option>
+            <ion-option value="5">5</ion-option>
+        </ion-select>
+    </ion-item>
+    <ion-row>
+        <ion-label *ngIf="en" color="primary">หมายเหตุ</ion-label>
+    </ion-row>
+    <ion-row>
+        <ion-col text-center>
+            <ion-textarea *ngIf="en" id="note" [(ngModel)]="note" rows="5" style="width: 80%; border-style: solid;border-color: black;border: 1px;"></ion-textarea>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col text-center>
+            <button *ngIf="en" ion-button style="width: 60%" (click)="submit()">บันทึกข้อมูล</button>
+            <button *ngIf="!en" ion-button style="width: 60%" (click)="submit()">ประมวลผล</button>
+        </ion-col>
+    </ion-row>
+    <!-- <button ion-button (click)="process()">วิเคราะห์คุณภาพเนื้อวัว</button> -->
 </ion-content>

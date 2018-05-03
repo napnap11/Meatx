@@ -1,16 +1,26 @@
 <ion-menu [content]="content">
   <ion-header>
     <ion-toolbar>
-      <ion-title>Menu</ion-title>
+      <img width="40" height="40" src="{{this.loginState.imageUrl}}">
+      <div>
+        {{this.loginState.email}}
+      </div>
+      <div>
+        {{this.loginState.displayName}}
+      </div>
     </ion-toolbar>
   </ion-header>
 
   <ion-content>
-    <ion-list>
-      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
-        {{p.title}}
-      </button>
-    </ion-list>
+      <ion-list>
+          <button menuClose ion-item detail-none *ngFor="let p of pages" (click)="openPage(p)">
+            <!--<ion-icon [name]="p.icon" item-left></ion-icon>-->
+            {{p.title}}
+          </button>
+          <button menuClose ion-item detail-none (click)="logout()">
+            ออกจากระบบ
+          </button>
+        </ion-list>
   </ion-content>
 
 </ion-menu>

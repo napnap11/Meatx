@@ -1,14 +1,43 @@
 <ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
-</ion-header>
 
+    <ion-navbar>
+        <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>MeatX</ion-title>
+      </ion-navbar>
+    
+</ion-header>
 <ion-content padding>
-    <button ion-button (click)="takePicture()" [navPush]="picturePage">ถ่ายรูป</button>
-    <div></div>
-    <button ion-button (click)="openAlbum()" [navPush]="picturePage">เลือกจากรูปที่มีอยู่</button>
+    <ion-row>
+        <ion-col text-center>
+          <img src ="assets/imgs/beefstar512.png" meax-height="512px" max-width="512px" width="80%" height="auto">
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col text-center>
+          <img src ="assets/imgs/meatx2.png" mex-height="72px" max-width="242px" height="auto" width="auto">
+        </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col text-center>
+          <button style ="width: 60%" ion-button (click)="previewPicture()" [navPush]="picturePreviewPage">ถ่ายภาพ</button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col text-center>
+          <button *ngIf="en" style ="width: 60%" ion-button (click)="openAlbum()" [navPush]="picturePage">เลือกจากภาพที่มีอยู่</button>
+      </ion-col>
+    </ion-row>
+    <!-- <ion-row>
+        <ion-col text-center>
+            <button style ="width: 60%" ion-button (click)="openWebsite()" >เปิดเว็บไซต์</button>
+        </ion-col>
+      </ion-row> -->
+    <ion-row>
+        <ion-col text-center>
+            <button *ngIf="en" style ="width: 60%" ion-button (click)="sync()" [navPush]="syncResultPage">{{syncString}}</button>
+        </ion-col>
+    </ion-row>
+    
 </ion-content>
